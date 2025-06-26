@@ -53,3 +53,10 @@ jobs:
       with:
         name: css-analyzer-jar
         path: build/libs/*.jar
+
+    - name: Upload release artifacts
+      uses: Roang-zero1/github-upload-release-artifacts-action@v2
+      with:
+        args: "build/libs/css-analyzer-jar.jar"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
